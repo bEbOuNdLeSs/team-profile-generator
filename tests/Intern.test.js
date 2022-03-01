@@ -1,20 +1,23 @@
-// My Attempt
-const Intern = require("../lib/Intern");
+// using Intern constructor 
+const Intern = require('../lib/Intern');
 
-test("Can create school.", () => {
-    const testSchool = "School Name";
-    const employeeInstance = new Intern("bEboUndLeSs", 2, "beboundlessssss@gmail.com", testSchool);
-    expect(employeeInstance.school).toBe(testSchool);
+// creating intern object  
+test('creates an Intern object', () => {
+    const intern = new Intern('bEbOuNdLeSs', 42, 'beboundlessssss@gmail', 'UW');
+    
+    expect(intern.school) .toEqual(expect.any(String));
 });
 
-test("Testing officeNumber will return office number.", () => {
-    const testSchool = "School Name";
-    const employeeInstance = new Intern("bEbOuNdLeSs", 2, "jamesljenks@gmail.com", testSchool);
-    expect(employeeInstance.getSchool()).toBe(testSchool);
+// gets school from getSchool()
+test('gets employee school', () => {
+    const intern = new Intern('bEbOuNdLeSs', 42, 'beboundlessssss@gmail', 'UW');
+    
+    expect(intern.getSchool()).toEqual(expect.stringContaining(intern.school.toString()));
 });
 
-test("Testing role.", () => {
-    const returnValue = "Intern";
-    const employeeInstance = new Intern("bEbOuNdLeSs", 2, "beboundlessssss@gmail.com", "School Name");
-    expect(employeeInstance.getRole()).toBe(returnValue);
-});
+// gets role from getRole()
+test('gets role of employee', () => {
+    const intern = new Intern('bEbOuNdLeSs', 42, 'beboundlessssss@gmail.com', 'UW');
+
+    expect(intern.getRole()).toEqual("Intern");
+}); 

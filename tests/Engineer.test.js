@@ -1,19 +1,23 @@
-const Engineer = require("../lib/Engineer");
+// using Engineer constructor 
+const Engineer = require('../lib/Engineer');
 
-test("Can create a github.", () => {
-    const testGithub = "bEbOuNdLeSs";
-    const employeeInstance = new Engineer("bEbOuNdLeSs", 2, "beboundlessssss@gmail.com", testGithub);
-    expect(employeeInstance.github).toBe(testGithub);
+// creating engineer object  
+test('creates an Engineer object', () => {
+    const engineer = new Engineer('bEbOuNdLeSs', 42, 'beboundlessssss@gmail', 'beboundless');
+    
+    expect(engineer.github) .toEqual(expect.any(String));
 });
 
-test("Testing getGithub will return github.", () => {
-    const testGithub = "bEbOuNdLeSs";
-    const employeeInstance = new Engineer("bEbOuNdLeSs", 2, "beboundlessssss@gmail.com", testGithub);
-    expect(employeeInstance.getGithub()).toBe(testGithub);
+// gets github from getGithub()
+test('gets engineer github value', () => {
+    const engineer = new Engineer('bEbOuNdLeSs', 42, 'beboundlessssss@gmail', 'beboundless');
+
+    expect(engineer.getGithub()).toEqual(expect.stringContaining(engineer.github.toString()));
 });
 
-test("Testing role.", () => {
-    const returnValue = "Engineer";
-    const employeeInstance = new Engineer("bEbOuNdLeSs", 2, "beboundlessssss@gmail.com", "bEbOuNdLeSs");
-    expect(employeeInstance.getRole()).toBe(returnValue);
+// gets role from getRole() 
+test('gets role of employee', () => {
+    const engineer = new Engineer('bEbOuNdLeSs', 42, 'beboundlessssss@gmail', 'beboundless');
+
+    expect(engineer.getRole()).toEqual("Engineer");
 });
